@@ -28,9 +28,8 @@ class AppTheme {
         color: Color(0xFFC5C5C5),
         elevation: 0,
       ),
-      dividerTheme: const DividerThemeData(
-        color: Color(0xFFA4A4A4),
-        thickness: 1,
+      dividerTheme: DividerThemeData(
+        color: AppColor.shadesOfYellow1.withOpacity(0.5),
       ),
       textTheme: const TextTheme(
         headline1: TextStyle(
@@ -88,7 +87,7 @@ class AppTheme {
           fontWeight: FontWeight.w300,
         ),
         caption: TextStyle(
-          fontSize: 12.0,
+          fontSize: 10.0,
           fontFamily: 'Poppins',
           color: Colors.black,
           fontWeight: FontWeight.w400,
