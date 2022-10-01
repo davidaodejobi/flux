@@ -364,11 +364,13 @@ class TextFieldWithHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          headerText,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodyText2,
-        ),
+        headerText.isNotEmpty
+            ? Text(
+                headerText,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyText2,
+              )
+            : const SizedBox.shrink(),
         const YMargin(4),
         Container(
           height: height,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../constants/app_color.dart';
 import '../../shared/glassy_card.dart';
 import '../../shared/margin.dart';
-import '../connect/connect.dart';
+import '../create/create.dart';
 import 'widgets/side_navigation_bar.dart';
 
 class App extends StatelessWidget {
@@ -102,7 +102,8 @@ class Arch extends StatelessWidget {
             const YMargin(10),
             const Expanded(
               // child: Home(),
-              child: Connect(),
+              // child: Connect(),
+              child: Create(),
             ),
           ],
         ),
