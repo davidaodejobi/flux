@@ -100,7 +100,7 @@ class Arch extends StatelessWidget {
               ),
             ),
             const YMargin(10),
-            const Expanded(
+            Expanded(
               // child: Home(),
               // child: Connect(),
               child: Create(),
