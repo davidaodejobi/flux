@@ -16,18 +16,18 @@ class ConnectSideCard extends StatelessWidget {
         sigmaX: 10.0,
         sigmaY: 10.0,
         height: double.infinity,
-        color: Colors.white10.withOpacity(0.1),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          stops: const [0.1, 0.5, 0.7, 0.9],
-          colors: [
-            AppColor.shadesOfBlue5.withOpacity(0.2),
-            AppColor.shadesOfBlue6.withOpacity(0.3),
-            AppColor.shadesOfBlue7.withOpacity(0.4),
-            AppColor.shadesOfBlue8.withOpacity(0.5),
-          ],
-        ),
+        color: AppColor.shadesOfBlue6,
+        // gradient: LinearGradient(
+        //   begin: Alignment.topLeft,
+        //   end: Alignment.bottomRight,
+        //   stops: const [0.1, 0.5, 0.7, 0.9],
+        //   colors: [
+        //     AppColor.shadesOfBlue5.withOpacity(0.2),
+        //     AppColor.shadesOfBlue6.withOpacity(0.3),
+        //     AppColor.shadesOfBlue7.withOpacity(0.4),
+        //     AppColor.shadesOfBlue8.withOpacity(0.5),
+        //   ],
+        // ),
         child: ListView(
           children: [
             Text(

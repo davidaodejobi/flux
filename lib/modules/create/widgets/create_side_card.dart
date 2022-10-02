@@ -16,7 +16,7 @@ class CreateSideCard extends StatelessWidget {
         children: [
           Expanded(
             child: GlassyCard(
-                color: AppColor.shadesOfBlue2,
+                color: AppColor.shadesOfBlue6,
                 child: SizedBox(
                   child: Column(
                     children: [

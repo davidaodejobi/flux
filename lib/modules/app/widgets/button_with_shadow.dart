@@ -1,27 +1,37 @@
+import 'package:devffest_ilorin/modules/app/view_model/app_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
-import '../../../constants/app_color.dart';
 import '../../../shared/margin.dart';
 
-class SideNavBarButton extends StatefulWidget {
+class ButtonWithShadow extends StatefulWidget {
   final String label;
-  // final String icon;
   final Color iconBgcolor;
   final Color bgColor;
-  const SideNavBarButton({
+  final Widget prefix;
+  final Widget suffix;
+  final Screens screen;
+  const ButtonWithShadow({
     required this.label,
-    // required this.icon,
     required this.iconBgcolor,
     required this.bgColor,
+    required this.screen,
+    this.prefix = const SizedBox.shrink(),
+    this.suffix = const SizedBox.shrink(),
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SideNavBarButton> createState() => _SideNavBarButtonState();
+  State<ButtonWithShadow> createState() => _ButtonWithShadowState();
+
+  paddingOnly({required int right}) {
+    Padding(
+      padding: EdgeInsets.only(right: right.toDouble()),
+    );
+  }
 }
 
-class _SideNavBarButtonState extends State<SideNavBarButton> {
+class _ButtonWithShadowState extends State<ButtonWithShadow> {
   bool _isPressed = false;
 
   pressed() {
@@ -39,10 +49,12 @@ class _SideNavBarButtonState extends State<SideNavBarButton> {
 
   @override
   Widget build(BuildContext context) {
+    final ap = Provider.of<AppProvider>(context);
     return Column(
       children: [
         InkWell(
           onTapDown: (TapDownDetails details) {
+            ap.switchTab(widget.screen);
             if (!_isPressed) {
               pressed();
             } else {
@@ -50,6 +62,7 @@ class _SideNavBarButtonState extends State<SideNavBarButton> {
             }
           },
           onTap: () {
+            ap.switchTab(widget.screen);
             pressed();
             if (_isPressed) {
               Future.delayed(const Duration(milliseconds: 100), () {
@@ -95,16 +108,12 @@ class _SideNavBarButtonState extends State<SideNavBarButton> {
             ),
             child: Row(
               children: [
-                SvgPicture.asset(
-                  'assets/svgs/chat.svg',
-                  color: AppColor.primaryBlueColor,
-                  fit: BoxFit.scaleDown,
-                ),
-                const XMargin(10),
+                widget.prefix,
                 Text(
                   widget.label,
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
+                widget.suffix,
               ],
             ),
           ),

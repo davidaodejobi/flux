@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 import '../constants/app_color.dart';
@@ -25,34 +26,22 @@ class ActionButton extends StatelessWidget {
         createProvider.isDownloadbutton
             ? Column(
                 children: [
-                  Container(
-                    height: 50,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: AppColor.shadesOfBlue2,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ).animate().slide(
-                        duration: 500.ms,
-                        begin: const Offset(0, 100),
-                        end: const Offset(0, 0),
-                      ),
+                  ExportButtons(
+                    iconPath: 'assets/animations/download.json',
+                    text: 'Download',
+                    onTap: () {
+                      createProvider.capturePng();
+                      createProvider.toggleDownloadButton();
+                    },
+                  ).animate().fade(duration: 250.ms).scale(delay: 250.ms),
                   const YMargin(5),
-                  Container(
-                    height: 50,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: AppColor.shadesOfBlue2,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  )
-                      .animate()
-                      .fade(
-                        duration: 500.ms,
-                      )
-                      .scale(
-                        duration: 500.ms,
-                      ),
+                  ExportButtons(
+                    iconPath: 'assets/animations/share.json',
+                    text: 'Share',
+                    onTap: () {
+                      createProvider.toggleDownloadButton();
+                    },
+                  ).animate().fade(duration: 100.ms).scale(delay: 100.ms),
                   const YMargin(5),
                 ],
               )
@@ -90,6 +79,53 @@ class ActionButton extends StatelessWidget {
               )),
         ),
       ],
+    );
+  }
+}
+
+class ExportButtons extends StatelessWidget {
+  final VoidCallback onTap;
+  final String text;
+  final String iconPath;
+  const ExportButtons({
+    required this.onTap,
+    required this.text,
+    required this.iconPath,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
+        height: 40,
+        width: 130,
+        decoration: BoxDecoration(
+          color: AppColor.shadesOfBlue8,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                text,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: Colors.white),
+              ),
+            ),
+            const XMargin(10),
+            Lottie.asset(
+              iconPath,
+              width: 30,
+              height: 30,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

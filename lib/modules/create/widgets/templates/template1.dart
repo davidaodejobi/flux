@@ -53,7 +53,7 @@ class Template1 extends StatelessWidget {
               child: SizedBox(
             child: Center(
               child: Text(
-                'Hello World here is the price to pay for the best service',
+                "E no matter the condition Believe in your heart and you go dey alright No forget say after rainfall and after the dark, the sun go shine",
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline3!.copyWith(
                       height: 1.0,
@@ -71,14 +71,14 @@ class Template1 extends StatelessWidget {
                 children: [
                   RichText(
                     text: TextSpan(
-                      text: 'Hello\n',
+                      text: 'Johnny\n',
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             height: 0.8,
                             fontWeight: FontWeight.w600,
                           ),
                       children: [
                         TextSpan(
-                          text: 'World\n',
+                          text: 'Drill\n',
                           style:
                               Theme.of(context).textTheme.bodyText1!.copyWith(
                                     height: 0.8,
@@ -106,8 +106,8 @@ class Template1 extends StatelessWidget {
                   ),
                   const XMargin(10),
                   Text(
-                    '@theDAO',
-                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                    '@iamDavidOdejobi',
+                    style: Theme.of(context).textTheme.caption!.copyWith(
                           height: 0.8,
                           fontWeight: FontWeight.w600,
                         ),

@@ -1,9 +1,10 @@
+import 'package:devffest_ilorin/modules/connect/connect.dart';
+import 'package:devffest_ilorin/modules/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../../constants/app_color.dart';
-import '../../shared/glassy_card.dart';
-import '../../shared/margin.dart';
-import '../create/create.dart';
+import '../create/createe.dart';
+import 'view_model/app_provider.dart';
 import 'widgets/side_navigation_bar.dart';
 
 class App extends StatelessWidget {
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
           children: const [
             SideNavigationBar(),
             Expanded(
-              child: Arch(),
+              child: TheA(),
             ),
           ],
         ),
@@ -31,83 +32,33 @@ class App extends StatelessWidget {
   }
 }
 
-class Arch extends StatelessWidget {
-  const Arch({
-    Key? key,
-  }) : super(key: key);
+class TheA extends StatelessWidget {
+  const TheA({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 30,
-          right: 30,
-          bottom: 10,
-        ),
-        child: Column(
+    return Consumer<AppProvider>(
+      builder: (context, appProvider, child) {
+        return Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 100,
-              ),
-              child: Container(
-                height: kToolbarHeight,
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'LoremEpsum',
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                    const Spacer(),
-                    const GlassyCard(
-                      color: AppColor.shadesOfBlue2,
-                      child: Icon(
-                        Icons.person,
-                      ),
-                    ),
-                    const XMargin(10),
-                    Text(
-                      'JadeX',
-                      style: Theme.of(context).textTheme.bodyText2,
-                    ),
-                    const XMargin(30),
-                    const GlassyCard(
-                      color: AppColor.shadesOfGreen2,
-                      child: Icon(
-                        Icons.stream_sharp,
-                      ),
-                    ),
-                  ],
+            if (appProvider.homeSwitch) const Home(),
+            if (appProvider.connectSwitch) const Connect(),
+            if (appProvider.createSwitch) const Createe(),
+            if (appProvider.chatSwitch)
+              Expanded(
+                child: Container(
+                  color: Colors.yellow,
                 ),
               ),
-            ),
-            // const YMargin(10),
-            const Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 40,
-                // vertical: 10,/??
+            if (appProvider.mapSwitch)
+              Expanded(
+                child: Container(
+                  color: Colors.purple,
+                ),
               ),
-              child: Divider(
-                color: AppColor.shadesOfBlue2,
-                thickness: 1,
-              ),
-            ),
-            const YMargin(10),
-            Expanded(
-              // child: Home(),
-              // child: Connect(),
-              child: Create(),
-            ),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 }

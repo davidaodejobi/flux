@@ -1,4 +1,5 @@
 import 'package:devffest_ilorin/core/utils/theme.dart';
+import 'package:devffest_ilorin/modules/app/view_model/app_provider.dart';
 import 'package:devffest_ilorin/modules/create/view_models/create_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
+          ChangeNotifierProvider<AppProvider>(
+            create: (_) => AppProvider(),
+          ),
           ChangeNotifierProvider<CreateProvider>(
             create: (_) => CreateProvider(),
           ),
