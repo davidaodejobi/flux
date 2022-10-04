@@ -103,7 +103,7 @@ class ExportButtons extends StatelessWidget {
         height: 40,
         width: 130,
         decoration: BoxDecoration(
-          color: AppColor.shadesOfBlue8,
+          color: const Color(0xFF39404F),
           borderRadius: BorderRadius.circular(5),
         ),
         child: Row(

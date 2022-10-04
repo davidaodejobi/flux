@@ -7,7 +7,6 @@ import '../../shared/action_button.dart';
 import '../../shared/margin.dart';
 import 'view_models/create_provider.dart';
 import 'widgets/create_button_card.dart';
-import 'widgets/create_side_card.dart';
 import 'widgets/templates/template.dart';
 
 class Createe extends StatelessWidget {
@@ -18,12 +17,12 @@ class Createe extends StatelessWidget {
     final createProvider = Provider.of<CreateProvider>(context);
     return Header(
       child: Expanded(
-        child: Row(
-          children: [
-            Expanded(
-              child: ListView(
-                children: [
-                  Row(
+        child: SizedBox(
+          child: Column(
+            children: [
+              Expanded(
+                child: SizedBox(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -33,21 +32,20 @@ class Createe extends StatelessWidget {
                         child: const Template1(),
                       ),
                       ActionButton(
-                          onTap: () {
-                            createProvider.toggleDownloadButton();
-                          },
-                          text: 'Export',
-                          icon: const SizedBox.shrink()),
+                        onTap: () {
+                          createProvider.toggleDownloadButton();
+                        },
+                        text: 'Export',
+                        icon: const SizedBox.shrink(),
+                      ),
                     ],
                   ),
-                  const YMargin(10),
-                  const CreateButtomCard(),
-                ],
+                ),
               ),
-            ),
-            const XMargin(30),
-            const CreateSideCard(),
-          ],
+              const YMargin(10),
+              const CreateButtomCard(),
+            ],
+          ),
         ),
       ),
     );

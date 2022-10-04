@@ -95,9 +95,8 @@ class _ButtonWithShadowState extends State<ButtonWithShadow> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: _isPressed
-                      ? Colors.transparent
-                      : const Color.fromARGB(255, 62, 62, 62),
+                  color:
+                      _isPressed ? Colors.transparent : const Color(0xFF86809C),
                   spreadRadius: 0,
                   blurRadius: 0,
                   offset: _isPressed

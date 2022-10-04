@@ -21,7 +21,7 @@ class SideNavigationBar extends StatelessWidget {
     return Container(
       width: 250,
       decoration: const BoxDecoration(
-        color: AppColor.primaryBlueColor,
+        color: Color(0xFF162035),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,9 +30,21 @@ class SideNavigationBar extends StatelessWidget {
             padding: const EdgeInsets.only(
               top: 40,
             ),
-            child: Text(
-              'LoremEpsum',
-              style: Theme.of(context).textTheme.headline6,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const FaIcon(
+                  FontAwesomeIcons.heartCircleBolt,
+                  color: Colors.white,
+                ),
+                const XMargin(10),
+                Text(
+                  'LoremEpsum',
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
+              ],
             ),
           ),
           Consumer<AppProvider>(

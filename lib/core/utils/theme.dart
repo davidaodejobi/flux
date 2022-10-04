@@ -7,7 +7,7 @@ class AppTheme {
       iconTheme: const IconThemeData(
         color: Colors.black,
       ),
-      scaffoldBackgroundColor: AppColor.primaryBlueColor,
+      scaffoldBackgroundColor: const Color(0xFF162035),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         backgroundColor: AppColor.shadesOfBlue5,

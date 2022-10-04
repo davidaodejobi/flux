@@ -16,7 +16,7 @@ class Header extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
+          color: const Color(0xFFf8f8ff),
         ),
         child: Padding(
           padding: const EdgeInsets.only(
