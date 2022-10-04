@@ -4,9 +4,40 @@ import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 
+import '../../../core/models/template_model.dart';
+
+enum TemplateType { template1, template2, template3, template4, template5 }
+
 class CreateProvider with ChangeNotifier {
+  int selectedTemplateIndex = 0;
+
+  switchTemplate(int index) {
+    selectedTemplateIndex = index;
+    notifyListeners();
+  }
+
+  List<TemplateModel> templates = [
+    TemplateModel(
+        title: 'Cortana',
+        color: Colors.teal,
+        onPressed: () {},
+        hasImage: false),
+    TemplateModel(
+        title: 'Wakanda', color: Colors.blue, onPressed: () {}, hasImage: true),
+    TemplateModel(
+        title: 'Thor', color: Colors.yellow, onPressed: () {}, hasImage: false),
+    TemplateModel(
+        title: 'Flash', color: Colors.pink, onPressed: () {}, hasImage: true),
+    TemplateModel(
+        title: 'Obidient',
+        color: Colors.grey,
+        onPressed: () {},
+        hasImage: false),
+  ];
+
   get isDownloadbutton => _isDownloadButton;
 
   late Uint8List imageFile;
