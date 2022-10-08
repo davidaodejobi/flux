@@ -10,6 +10,7 @@ class GlassyCard extends StatelessWidget {
   final double sigmaX;
   final double sigmaY;
   final Gradient? gradient;
+  final double padding;
   const GlassyCard({
     Key? key,
     required this.color,
@@ -19,6 +20,7 @@ class GlassyCard extends StatelessWidget {
     this.sigmaX = 50.0,
     this.sigmaY = 50.0,
     this.gradient,
+    this.padding = 10.0,
   }) : super(key: key);
 
   @override
@@ -30,9 +32,9 @@ class GlassyCard extends StatelessWidget {
         child: Container(
           // height: height,
           // width: width,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 10,
+          padding: EdgeInsets.symmetric(
+            horizontal: padding,
+            vertical: padding,
           ),
           decoration: BoxDecoration(
             gradient: gradient,

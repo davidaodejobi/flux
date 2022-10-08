@@ -73,7 +73,7 @@ class _ButtonWithShadowState extends State<ButtonWithShadow> {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 150),
             curve: Curves.linear,
-            height: 35,
+            height: 30,
             width: double.infinity,
             padding: const EdgeInsets.only(left: 16),
             margin: !_isPressed
