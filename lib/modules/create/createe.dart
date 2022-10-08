@@ -1,6 +1,5 @@
 import 'package:devffest_ilorin/modules/app/widgets/header.dart';
 import 'package:devffest_ilorin/modules/create/widgets/templates/template.dart';
-import 'package:devffest_ilorin/modules/create/widgets/templates/template1.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -38,7 +37,7 @@ class Createe extends StatelessWidget {
     return Header(
       child: Expanded(
         child: SizedBox(
-          child: Column(
+          child: ListView(
             children: [
               Expanded(
                 child: SizedBox(

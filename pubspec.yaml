@@ -21,6 +21,7 @@ dependencies:
   screenshot: ^1.2.3
   flutter_animate: ^1.0.0
   lottie: ^1.4.3
+  file_picker: ^5.2.0+1
 
 dev_dependencies:
   flutter_test:

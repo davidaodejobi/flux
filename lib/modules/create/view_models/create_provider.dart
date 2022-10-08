@@ -3,8 +3,8 @@
 import 'dart:convert';
 import 'dart:html';
 
+import 'package:devffest_ilorin/constants/app_color.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 
 import '../../../core/models/template_model.dart';
@@ -22,18 +22,27 @@ class CreateProvider with ChangeNotifier {
   List<TemplateModel> templates = [
     TemplateModel(
         title: 'Cortana',
-        color: Colors.teal,
+        color: AppColor.primaryYellowColor,
         onPressed: () {},
         hasImage: false),
     TemplateModel(
-        title: 'Wakanda', color: Colors.blue, onPressed: () {}, hasImage: true),
+        title: 'Wakanda',
+        color: AppColor.primaryBlueColor,
+        onPressed: () {},
+        hasImage: true),
     TemplateModel(
-        title: 'Thor', color: Colors.yellow, onPressed: () {}, hasImage: false),
+        title: 'Thor',
+        color: AppColor.primaryGreenColor,
+        onPressed: () {},
+        hasImage: false),
     TemplateModel(
-        title: 'Flash', color: Colors.pink, onPressed: () {}, hasImage: true),
+        title: 'Flash',
+        color: AppColor.primaryRedColor,
+        onPressed: () {},
+        hasImage: true),
     TemplateModel(
         title: 'Obidient',
-        color: Colors.grey,
+        color: AppColor.backgroundColor,
         onPressed: () {},
         hasImage: false),
   ];
