@@ -37,28 +37,26 @@ class Createe extends StatelessWidget {
     return Header(
       child: Expanded(
         child: SizedBox(
-          child: ListView(
+          child: Column(
             children: [
-              Expanded(
-                child: SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const SizedBox(),
-                      Screenshot(
-                        controller: createProvider.screenshotController,
-                        child: temp[createProvider.selectedTemplateIndex],
-                      ),
-                      ActionButton(
-                        onTap: () {
-                          createProvider.toggleDownloadButton();
-                        },
-                        text: 'Export',
-                        icon: const SizedBox.shrink(),
-                      ),
-                    ],
-                  ),
+              SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const SizedBox(),
+                    Screenshot(
+                      controller: createProvider.screenshotController,
+                      child: temp[createProvider.selectedTemplateIndex],
+                    ),
+                    ActionButton(
+                      onTap: () {
+                        createProvider.toggleDownloadButton();
+                      },
+                      text: 'Export',
+                      icon: const SizedBox.shrink(),
+                    ),
+                  ],
                 ),
               ),
               const YMargin(10),

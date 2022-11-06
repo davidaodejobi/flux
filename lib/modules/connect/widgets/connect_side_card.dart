@@ -16,7 +16,7 @@ class ConnectSideCard extends StatelessWidget {
         sigmaX: 10.0,
         sigmaY: 10.0,
         height: double.infinity,
-        color: AppColor.shadesOfBlue6,
+        color: AppColor.backgroundColor,
         // gradient: LinearGradient(
         //   begin: Alignment.topLeft,
         //   end: Alignment.bottomRight,

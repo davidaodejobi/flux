@@ -17,7 +17,7 @@ class CreateButtomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final createProvider = Provider.of<CreateProvider>(context);
     return GlassyCard(
-      color: AppColor.brownColor,
+      color: AppColor.backgroundColor,
       child: SizedBox(
         height: 150,
         width: double.infinity,
